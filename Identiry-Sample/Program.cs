@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddAuthorization();
-builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme); // Enables cookie-based authentication
+builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme).AddBearerToken(IdentityConstants.BearerScheme); // Enables cookie-based authentication
 
 builder.Services.AddIdentityCore<Customer>()
     .AddEntityFrameworkStores<AuthDbcontext>()
